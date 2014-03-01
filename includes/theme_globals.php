@@ -8,6 +8,8 @@ $GLOBALS['site_title'] 											= $GLOBALS['site_name'].' &raquo; '.$GLOBALS['
 // ..._url
 $GLOBALS['theme_url']													= esc_url( bloginfo( 'template_url' ) );
 $GLOBALS['home_url']														= esc_url( home_url( '/' ) );
+// ..._path
+$GLOBALS['css_path'] 													= 'wp-content/themes/tnz5-techn/css/';
 // ..._style
 $GLOBALS['body_style']												= 'background: '. get_theme_mod( 'bb_theme_bg_color' ) ) .'url('. get_theme_mod( 'bb_theme_bg_image' ) .' '. get_theme_mode( 'bb_theme_bg_position' ) .' / '. get_theme_mode( 'bb_theme_bg_size' ) .' '. get_theme_mode( 'bb_theme_bg_repeat' );
 $GLOBALS['header_style']										= 'display: block; height:'. get_theme_mod( 'tn_theme_header_height' ) .'background: '. get_theme_mod( 'tn_theme_header_bg_color' ). ' url('. get_theme_mod( 'tn_theme_header_bg_image' ). ') '. get_theme_mod( 'tn_theme_header_bg_position' ). ' ' .get_theme_mod( 'tn_theme_header_bg_repeat' );

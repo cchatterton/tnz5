@@ -7,9 +7,9 @@
     <!-- end everything -->
 
 <?php wp_footer(); ?>
-<script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/jquery.js"></script>
-<script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/fastclick.js"></script>
-<script src="<?php bloginfo( 'template_url' ); ?>/js/foundation.min.js"></script>
+<script src="<?php tn_e( 'theme_url' ); ?>/js/vendor/jquery.js"></script>
+<script src="<?php tn_e( 'theme_url' ); ?>/js/vendor/fastclick.js"></script>
+<script src="<?php tn_e( 'theme_url' ); ?>/js/foundation.min.js"></script>
 <script>
 	var tnz5 = jQuery.noConflict();
 	tnz5(document).foundation();

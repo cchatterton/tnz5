@@ -2,12 +2,11 @@
 
 function theme_styles(){
 	// get default style
-	$tn_default = 'wp-content/themes/tnz5-techn/css/default.css';
-	$tn_style = file_get_contents( $tn_default );
+	$tn_style = file_get_contents( tn_r( 'css_path' ).'style.css' );
 
 	// create dynamic style
-$tn_style .="
-	/* topbar style aaa */
+	$tn_style .="
+	/* topbar style */
 	.top-bar.expanded {display: inline;}
 	.top-bar.expanded .title-area, .top-bar-section ul li:hover > a {background: ".__( get_theme_mod( 'tn_theme_topbar_bg_color_hover' ) ).";}
 	.top-bar.expanded .toggle-topbar a{color:".__( get_theme_mod( 'tn_theme_topbar_bg_color_hover' ) ).";}
@@ -23,7 +22,7 @@ $tn_style .="
 ";
 
 	// write full style to style.css
-	file_put_contents( 'wp-content/themes/tnz5-techn/css/style.css', $tn_style);
+	file_put_contents( tn_r( 'css_path' ).'theme.css', $tn_style);
 }
 add_action( 'wp_enqueue_scripts', 'theme_styles' );
 

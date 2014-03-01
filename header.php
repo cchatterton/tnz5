@@ -12,7 +12,7 @@
     <link rel="icon" href="<?php tn_e( 'tn_theme_image_favicon', 'customizer' ); ?>" type="image/png" />
     <link rel="stylesheet" href="<?php tn_e( 'theme_url' ); ?>/css/foundation.css" />
     <link rel="stylesheet" href="<?php tn_e( 'theme_url' ); ?>/css/normalize.css" />
-    <link rel="stylesheet" href="<?php tn_e( 'theme_url' ); ?>/css/style.css?v=<?php _e( date('c') ); ?>" />
+    <link rel="stylesheet" href="<?php tn_e( 'theme_url' ); ?>/css/theme.css?v=<?php _e( date('c') ); ?>" />
 
     <script src="<?php tn_e( 'theme_url' ); ?>/js/modernizr.js"></script>
 
