@@ -1,6 +1,6 @@
 <?php
 
-function fx_tn_dynamic_styles(){
+function theme_styles(){
 	// get default style
 	$tn_default = 'wp-content/themes/tnz5-techn/css/default.css';
 	$tn_style = file_get_contents( $tn_default );
@@ -25,6 +25,6 @@ $tn_style .="
 	// write full style to style.css
 	file_put_contents( 'wp-content/themes/tnz5-techn/css/style.css', $tn_style);
 }
-add_action( 'wp_enqueue_scripts', 'fx_tn_dynamic_styles' );
+add_action( 'wp_enqueue_scripts', 'theme_styles' );
 
 ?>
