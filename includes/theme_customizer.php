@@ -46,7 +46,7 @@ function fx_tn_theme_box( $wp_customize ) {
 	) );
 	$wp_customize->add_setting( 'tn_theme_image_logo_medium_padding', array( 'default' => '3px' ) );
 	$wp_customize->add_control( 'tn_theme_image_logo_medium_padding', array(
-		'label'    => __( 'Logo on large screen padding', 'tn_' ),
+		'label'    => __( 'Logo on medium screen padding', 'tn_' ),
 		'section'  => 'tn_theme_images_section',
 		'type'     => 'text',
 		'priority' => 22,
@@ -241,6 +241,58 @@ function fx_tn_theme_box( $wp_customize ) {
 		'type'     => 'radio',
 		'choices'  => array( '1' => 'Left', '0' => 'Hidden' ),
 		'priority' => 10,
+	) );
+
+// CTA
+	$wp_customize->add_section( 'tn_theme_cta_section', array(
+		'title'    => 'Call To Action',
+		'priority' => 42,
+	) );
+	// inputs
+	$wp_customize->add_setting( 'tn_theme_cta_show', array( 'default' => '1') );
+	$wp_customize->add_control( 'tn_theme_cta_show', array(
+		'label'    => 'Show CTA',
+		'section'  => 'tn_theme_cta_section',
+		'type'     => 'checkbox',
+		'priority' => 10,
+	) );
+	$wp_customize->add_setting( 'tn_theme_cta_bg_color', array( 'default' => '#000000', 'sanitize_callback' => 'sanitize_hex_color', ) );
+	$wp_customize->add_control( new WP_Customize_Color_Control(  $wp_customize, 'tn_theme_cta_bg_color', array(
+		'label'    => __( 'CTA Color', 'tn_' ),
+		'section'  => 'tn_theme_cta_section',
+		'priority' => 30,
+	) ) );
+	$wp_customize->add_setting( 'tn_theme_cta_bg_color_hover', array( 'default' => '#111111', 'sanitize_callback' => 'sanitize_hex_color', ) );
+	$wp_customize->add_control( new WP_Customize_Color_Control(  $wp_customize, 'tn_theme_cta_bg_color_hover', array(
+		'label'    => __( 'CTA Hover Color', 'tn_' ),
+		'section'  => 'tn_theme_cta_section',
+		'priority' => 40,
+	) ) );
+	$wp_customize->add_setting( 'tn_theme_cta_font_color', array( 'default' => '#FFFFFF', 'sanitize_callback' => 'sanitize_hex_color', ) );
+	$wp_customize->add_control( new WP_Customize_Color_Control(  $wp_customize, 'tn_theme_cta_font_color', array(
+		'label'    => __( 'CTA Font Color', 'tn_' ),
+		'section'  => 'tn_theme_cta_section',
+		'priority' => 50,
+	) ) );
+	$wp_customize->add_setting( 'tn_theme_cta_font_color_hover', array( 'default' => '#EEEEEE', 'sanitize_callback' => 'sanitize_hex_color', ) );
+	$wp_customize->add_control( new WP_Customize_Color_Control(  $wp_customize, 'tn_theme_cta_font_color_hover', array(
+		'label'    => __( 'CTA Font Hover Color', 'tn_' ),
+		'section'  => 'tn_theme_cta_section',
+		'priority' => 60,
+	) ) );
+	$wp_customize->add_setting( 'tn_theme_cta_padding' );
+	$wp_customize->add_control( 'tn_theme_cta_padding', array(
+		'label'    => __( 'Padding', 'tn_' ),
+		'section'  => 'tn_theme_cta_section',
+		'type'     => 'text',
+		'priority' => 80,
+	) );
+	$wp_customize->add_setting( 'tn_theme_cta_click' );
+	$wp_customize->add_control( 'tn_theme_cta_click', array(
+		'label'    => __( 'Destination', 'tn_' ),
+		'section'  => 'tn_theme_cta_section',
+		'type'     => 'text',
+		'priority' => 80,
 	) );
 
 // Hero Row

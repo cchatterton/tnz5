@@ -15,7 +15,8 @@ function theme_styles(){
 	#toprow {overflow:hidden; display: block; ".__( get_theme_mod( 'tn_theme_toprow_height_type' ) ).": ".__( get_theme_mod( 'tn_theme_toprow_height' ) )."; background: ".__( get_theme_mod( 'tn_theme_toprow_bg_color' ) )." url(".__( get_theme_mod( 'tn_theme_toprow_bg_image' ) ).") ".__( get_theme_mod( 'tn_theme_toprow_bg_position' ) )." / ".__( get_theme_mod( 'tn_theme_toprow_bg_size' ) )." ".__( get_theme_mod( 'tn_theme_toprow_bg_repeat' ) ).";}
  #topbar {background: ".__( get_theme_mod( 'tn_theme_topbar_bg_color' ) ).";}
 	#herorow {display: block; background: ".__( get_theme_mod( 'tn_theme_herorow_bg_color' ) )." url(".__( get_theme_mod( 'tn_theme_herorow_bg_image' ) ).") ".__( get_theme_mod( 'tn_theme_herorow_bg_position' ) )." / ".__( get_theme_mod( 'tn_theme_herorow_bg_size' ) )." ".__( get_theme_mod( 'tn_theme_herorow_bg_repeat' ) ).";}
-
+ #cta {border:none; background:".__( get_theme_mod( 'tn_theme_cta_bg_color' ) ).";color:".__( get_theme_mod( 'tn_theme_cta_font_color' ) ).";margin:".__( get_theme_mod( 'tn_theme_cta_padding' ) ).";}
+ #cta:hover {cursor:pointer;background:".__( get_theme_mod( 'tn_theme_cta_bg_color_hover' ) ).";color:".__( get_theme_mod( 'tn_theme_cta_font_color_hover' ) ).";}
 	/* topbar style */
 	.top-bar.expanded {display: inline;}
 	.top-bar.expanded .title-area, .top-bar-section ul li:hover > a {background: ".__( get_theme_mod( 'tn_theme_topbar_bg_color_hover' ) ).";}
