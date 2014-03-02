@@ -10,6 +10,7 @@ require_once('includes/theme_style.php'); // <-- dynamic stylesheets
 // Common Functions (fx_...php) <-- from out functions libary
 require_once('includes/fx_convert_color.php');
 require_once('includes/fx_onclick.php');
+require_once('includes/fx_debug.php');
 require_once('includes/fx_encrypt.php');
 
 // Custom Functions (fx_...php) <-- developed just for this variation
