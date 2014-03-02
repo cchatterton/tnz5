@@ -6,13 +6,10 @@ $GLOBALS['site_name'] 												= get_bloginfo( 'name' );
 $GLOBALS['site_description'] 					= get_bloginfo( 'description' );
 $GLOBALS['site_title'] 											= $GLOBALS['site_name'].' &raquo; '.$GLOBALS['site_description'];
 // ..._url
-$GLOBALS['theme_url']													= esc_url( bloginfo( 'template_url' ) );
+$GLOBALS['theme_url']													= get_template_directory_uri();
 $GLOBALS['home_url']														= esc_url( home_url( '/' ) );
 // ..._path
-$GLOBALS['css_path'] 													= 'wp-content/themes/tnz5-techn/css/';
-// ..._style
-$GLOBALS['body_style']												= 'background: '. get_theme_mod( 'bb_theme_bg_color' ) ) .'url('. get_theme_mod( 'bb_theme_bg_image' ) .' '. get_theme_mode( 'bb_theme_bg_position' ) .' / '. get_theme_mode( 'bb_theme_bg_size' ) .' '. get_theme_mode( 'bb_theme_bg_repeat' );
-$GLOBALS['header_style']										= 'display: block; height:'. get_theme_mod( 'tn_theme_header_height' ) .'background: '. get_theme_mod( 'tn_theme_header_bg_color' ). ' url('. get_theme_mod( 'tn_theme_header_bg_image' ). ') '. get_theme_mod( 'tn_theme_header_bg_position' ). ' ' .get_theme_mod( 'tn_theme_header_bg_repeat' );
+$GLOBALS['css_path'] 													= 'wp-content/themes/kidsfutsal/css/';
 
 // global variables can be called with either tn_e or tn_r
 // _e for echo & _r for return
@@ -36,18 +33,25 @@ function tn__( $variable, $domain = 'tn_' ){
 }
 
 function tn_tn_( $variable, $domain ){
-		if ( $domain == 'customizer' ) {
-		$text = get_theme_mod( '$text' );
+	if ( $domain == 'customizer' ) {
+		$variable = get_theme_mod( '$text' );
 		$domain = 'tn_';
 	}
 	if ( $domain == 'option' ) {
-		$text = get_option( '$text', true );
+		$variable = get_option( '$text', true );
 		$domain = 'tn_';
 	}
-	if ( $GLOBALS[$text] ) {
-		__( $GLOBALS[$text] , $domain );
+
+	// var_dump( $GLOBALS[$variable] );
+	// var_dump( $domain );
+	// die();
+
+	if ( $GLOBALS[$variable] ) {
+		return __( $GLOBALS[$variable] , $domain );
 	} else {
-		__( $text , $domain );
+		return __( $variable , $domain );
 	}
 }
+
+// var_dump($GLOBALS);
 ?>

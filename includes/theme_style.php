@@ -6,6 +6,9 @@ function theme_styles(){
 
 	// create dynamic style
 	$tn_style .="
+
+	body {background: ".__( get_theme_mod( 'tn_theme_bg_color' ) )." url(".__( get_theme_mod( 'tn_theme_bg_image' ) ).") ".__( get_theme_mod( 'tn_theme_bg_position' ) )." / ".__( get_theme_mod( 'tn_theme_bg_size' ) )." ".__( get_theme_mod( 'tn_theme_bg_repeat' ) ).";}
+ #header-wrapper {display: block; height:".__( get_theme_mod( 'tn_theme_header_height' ) )."background: ".__( get_theme_mod( 'tn_theme_header_bg_color' ) )." url(".__( get_theme_mod( 'tn_theme_header_bg_image' ) ).") ".__( get_theme_mod( 'tn_theme_header_bg_position' ) )." ".__( get_theme_mod( 'tn_theme_header_bg_repeat' ) ).";}
 	/* topbar style */
 	.top-bar.expanded {display: inline;}
 	.top-bar.expanded .title-area, .top-bar-section ul li:hover > a {background: ".__( get_theme_mod( 'tn_theme_topbar_bg_color_hover' ) ).";}
@@ -22,7 +25,7 @@ function theme_styles(){
 ";
 
 	// write full style to style.css
-	file_put_contents( tn_r( 'css_path' ).'theme.css', $tn_style);
+	file_put_contents( tn_r( 'css_path' ).'theme.css', $tn_style );
 }
 add_action( 'wp_enqueue_scripts', 'theme_styles' );
 

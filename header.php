@@ -18,12 +18,12 @@
 
 <?php wp_head(); ?>
   </head>
-  <body style="<?php tn_e( 'body_style' ); ?>">
+  <body>
 
     <!-- start everything -->
     <div class="s-everything">
 
-      <div class="hide-for-small show-for-medium-up" id="header-wrapper" style="<?php tn_e( 'header_style' ); ?>">
+      <div class="hide-for-small show-for-medium-up" id="header-wrapper">
         <div class="row">
           <a href="<?php tn_e( 'home_url' ); ?>" rel="home">
             <img class="hide-for-small hide-for-medium show-for-large-up" id="tn-logo-large" src="<?php tn_e( 'tn_theme_image_logo_large', 'customizer' ); ?>" alt="Logo" title="<?php tn_e( 'site_name' ); ?> Logo" />
