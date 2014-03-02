@@ -34,11 +34,11 @@ function tn__( $variable, $domain = 'tn_' ){
 
 function tn_tn_( $variable, $domain ){
 	if ( $domain == 'customizer' ) {
-		$variable = get_theme_mod( '$text' );
+		$variable = get_theme_mod( $variable );
 		$domain = 'tn_';
 	}
 	if ( $domain == 'option' ) {
-		$variable = get_option( '$text', true );
+		$variable = get_option( $variable, true );
 		$domain = 'tn_';
 	}
 

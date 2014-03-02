@@ -33,7 +33,7 @@ if ( __( get_theme_mod( 'tn_theme_toprow_show' ) ) != 0 ) { ?>
     _e( '<div>' );
   } ?>
           <!-- logo -->
-          <div style="float:left; width: <?php _e( get_theme_mod( 'tn_theme_image_logo_desktop_width' ,'tn_' ) ); ?>">
+          <div class="clearfix" style="display:inline-block;float:left; width: <?php _e( get_theme_mod( 'tn_theme_image_logo_desktop_width' ,'tn_' ) ); ?>;">
             <a href="<?php tn_e( 'home_url' ); ?>" rel="home">
               <img class="hide-for-small hide-for-medium show-for-large-up" id="tn-logo-large" src="<?php tn_e( 'tn_theme_image_logo_large', 'customizer' ); ?>" alt="Logo" title="<?php tn_e( 'site_name' ); ?> Logo" />
               <img class="hide-for-small show-for-medium hide-for_large-up" id="tn-logo-medium" src="<?php tn_e( 'tn_theme_image_logo_medium', 'customizer' ); ?>" alt="Logo" title="<?php tn_e( 'site_name' ); ?> Logo" />
@@ -64,13 +64,14 @@ if ( __( get_theme_mod( 'tn_theme_herorow_show' ) ) != 0 ) { ?>
 <?php if ( __( get_theme_mod( 'tn_theme_herorow_show' ) ) == 2 ) {
     _e( '<div class="row ">'."\n" );
   } else {
-    _e( '<div>' );
+    _e( '<div class="row collapse" style="min-width: 100% !important;">' );
   } ?>
-          <div class="hide-for-small medium-5 medium-centered large-7 large-centered columns">
-            <a href="<?php //_e( esc_url( home_url( '/' ) ) ); ?>" rel="home">
-              <img class="hide-for-small hide-for-medium show-for-large-up" id="bb-logo-large" src="<?php _e( esc_url( get_theme_mod( 'tn_theme_image_logo_large' ) ) ); ?>" alt="Logo" title="<?php _e( get_bloginfo( 'name' ) ); ?> Logo" />
-              <img class="hide-for-small show-for-medium hide-for_large-up" id="bb-logo-medium" src="<?php _e( esc_url( get_theme_mod( 'tn_theme_image_logo_medium' ) ) ); ?>" alt="Logo" title="<?php _e( get_bloginfo( 'name' ) ); ?> Logo" />
-            </a>
+          <div class="hide-for-small medium-12 medium-centered large-12 large-centered columns" style="text-align:center;">
+<?php if( intval( get_theme_mod( 'tn_theme_hero_image_cat' ) ) > 0 ) {
+  fx_orbit( 'img_cat', get_theme_mod( 'tn_theme_hero_image_cat' ) );
+} else { ?>
+            <img id="hero" src="<?php _e( esc_url( get_theme_mod( 'tn_theme_hero_image' ) ) ); ?>" alt="Hero" title="<?php tn_e( 'site_name' ); ?> Hero" />
+<?php } ?>
           </div>
         </div>
       </div>

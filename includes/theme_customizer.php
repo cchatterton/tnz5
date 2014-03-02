@@ -73,7 +73,7 @@ function fx_tn_theme_box( $wp_customize ) {
 		'priority' => 32,
 	) );
 	// favicon
-	$wp_customize->add_setting( 'tn_theme_image_favicon' );
+	$wp_customize->add_setting( 'tn_theme_image_favicon', array( 'default' => esc_url( get_bloginfo( 'template_url' ) ).'/images/favicon.png' ) );
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'tn_theme_image_favicon', array(
 		'label'   	=> __( 'Favicon', 'tn_' ),
 		'section'  => 'tn_theme_images_section',
@@ -105,14 +105,14 @@ function fx_tn_theme_box( $wp_customize ) {
 		'type'     => 'text',
 		'priority' => 30,
 	) );
-	$wp_customize->add_setting( 'tn_theme_body_bg_repeat', array( 'default' => 'no-repeat' ) );
+	$wp_customize->add_setting( 'tn_theme_body_bg_repeat', array( 'default' => 'repeat' ) );
 	$wp_customize->add_control( 'tn_theme_body_bg_repeat', array(
 		'label'    => __( 'Background Repeat', 'tn_' ),
 		'section'  => 'tn_theme_body_bg_section',
 		'type'     => 'text',
 		'priority' => 40,
 	) );
-	$wp_customize->add_setting( 'tn_theme_body_bg_size', array( 'default' => 'cover' ) );
+	$wp_customize->add_setting( 'tn_theme_body_bg_size', array( 'default' => 'auto' ) );
 	$wp_customize->add_control( 'tn_theme_body_bg_size', array(
 		'label'    => __( 'Background Size', 'tn_' ),
 		'section'  => 'tn_theme_body_bg_section',
@@ -142,13 +142,6 @@ function fx_tn_theme_box( $wp_customize ) {
 		'choices'  => array( 'min-height' => 'min-height', 'height' => 'height', 'max-height' => 'max-height', ),
 		'priority' => 20,
 	) );
-	$wp_customize->add_setting( 'tn_theme_toprow_overflow' );
-	$wp_customize->add_control( 'tn_theme_toprow_overflow', array(
-		'label'    => 'Overflow Hidden',
-		'section'  => 'tn_theme_toprow_section',
-		'type'     => 'checkbox',
-		'priority' => 30,
-	) );
 	$wp_customize->add_setting( 'tn_theme_toprow_height', array( 'default' => '100px' ) );
 	$wp_customize->add_control( 'tn_theme_toprow_height', array(
 		'label'    => __( 'Height', 'tn_' ),
@@ -175,14 +168,14 @@ function fx_tn_theme_box( $wp_customize ) {
 		'type'     => 'text',
 		'priority' => 70,
 	) );
-	$wp_customize->add_setting( 'tn_theme_toprow_bg_repeat', array( 'default' => 'no-repeat' ) );
+	$wp_customize->add_setting( 'tn_theme_toprow_bg_repeat', array( 'default' => 'repeat' ) );
 	$wp_customize->add_control( 'tn_theme_toprow_bg_repeat', array(
 		'label'    => __( 'background Repeat', 'tn_' ),
 		'section'  => 'tn_theme_toprow_section',
 		'type'     => 'text',
 		'priority' => 80,
 	) );
-	$wp_customize->add_setting( 'tn_theme_toprow_bg_size', array( 'default' => 'cover' ) );
+	$wp_customize->add_setting( 'tn_theme_toprow_bg_size', array( 'default' => 'auto' ) );
 	$wp_customize->add_control( 'tn_theme_toprow_bg_size', array(
 		'label'    => __( 'Background Size', 'tn_' ),
 		'section'  => 'tn_theme_toprow_section',
@@ -241,6 +234,14 @@ function fx_tn_theme_box( $wp_customize ) {
 		'section'  => 'tn_theme_topbar_section',
 		'priority' => 70,
 	) ) );
+		$wp_customize->add_setting( 'tn_theme_topbar_pages', array( 'default' => '1') );
+	$wp_customize->add_control( 'tn_theme_topbar_pages', array(
+		'label'    => 'Page Menu',
+		'section'  => 'tn_theme_topbar_section',
+		'type'     => 'radio',
+		'choices'  => array( '1' => 'Left', '0' => 'Hidden' ),
+		'priority' => 10,
+	) );
 
 // Hero Row
 	$wp_customize->add_section( 'tn_theme_herorow_section', array(
@@ -256,28 +257,28 @@ function fx_tn_theme_box( $wp_customize ) {
 		'choices'  => array( '0' => 'Hidden', '1' => 'Full width', '2' => 'Within a row', ),
 		'priority' => 10,
 	) );
-	$wp_customize->add_setting( 'tn_theme_herorow_height_type', array( 'default' => 'height', ) );
-	$wp_customize->add_control( 'tn_theme_herorow_height_type', array(
-		'label'    => 'Height Type',
-		'section'  => 'tn_theme_herorow_section',
-		'type'     => 'radio',
-		'choices'  => array( 'min-height' => 'min-height', 'height' => 'height', 'max-height' => 'max-height', ),
-		'priority' => 20,
-	) );
-	$wp_customize->add_setting( 'tn_theme_herorow_overflow' );
-	$wp_customize->add_control( 'tn_theme_herorow_overflow', array(
-		'label'    => 'Overflow Hidden',
-		'section'  => 'tn_theme_herorow_section',
-		'type'     => 'checkbox',
-		'priority' => 30,
-	) );
-	$wp_customize->add_setting( 'tn_theme_herorow_height', array( 'default' => '100px' ) );
-	$wp_customize->add_control( 'tn_theme_herorow_height', array(
-		'label'    => __( 'Height', 'tn_' ),
-		'section'  => 'tn_theme_herorow_section',
-		'type'     => 'text',
-		'priority' => 40,
-	) );
+	// $wp_customize->add_setting( 'tn_theme_herorow_height_type', array( 'default' => 'height', ) );
+	// $wp_customize->add_control( 'tn_theme_herorow_height_type', array(
+	// 	'label'    => 'Height Type',
+	// 	'section'  => 'tn_theme_herorow_section',
+	// 	'type'     => 'radio',
+	// 	'choices'  => array( 'min-height' => 'min-height', 'height' => 'height', 'max-height' => 'max-height', ),
+	// 	'priority' => 20,
+	// ) );
+	// $wp_customize->add_setting( 'tn_theme_herorow_overflow' );
+	// $wp_customize->add_control( 'tn_theme_herorow_overflow', array(
+	// 	'label'    => 'Overflow Hidden',
+	// 	'section'  => 'tn_theme_herorow_section',
+	// 	'type'     => 'checkbox',
+	// 	'priority' => 30,
+	// ) );
+	// $wp_customize->add_setting( 'tn_theme_herorow_height', array( 'default' => '100px' ) );
+	// $wp_customize->add_control( 'tn_theme_herorow_height', array(
+	// 	'label'    => __( 'Height', 'tn_' ),
+	// 	'section'  => 'tn_theme_herorow_section',
+	// 	'type'     => 'text',
+	// 	'priority' => 40,
+	// ) );
 	$wp_customize->add_setting( 'tn_theme_herorow_bg_color', array( 'default' => '#FFFFFF', 'sanitize_callback' => 'sanitize_hex_color', ) );
 	$wp_customize->add_control( new WP_Customize_Color_Control(  $wp_customize, 'tn_theme_herorow_bg_color', array(
 		'label'    => __( 'Background Color', 'tn_' ),
@@ -297,21 +298,33 @@ function fx_tn_theme_box( $wp_customize ) {
 		'type'     => 'text',
 		'priority' => 70,
 	) );
-	$wp_customize->add_setting( 'tn_theme_herorow_bg_repeat', array( 'default' => 'no-repeat' ) );
+	$wp_customize->add_setting( 'tn_theme_herorow_bg_repeat', array( 'default' => 'repeat' ) );
 	$wp_customize->add_control( 'tn_theme_herorow_bg_repeat', array(
 		'label'    => __( 'background Repeat', 'tn_' ),
 		'section'  => 'tn_theme_herorow_section',
 		'type'     => 'text',
 		'priority' => 80,
 	) );
-	$wp_customize->add_setting( 'tn_theme_herorow_bg_size', array( 'default' => 'cover' ) );
+	$wp_customize->add_setting( 'tn_theme_herorow_bg_size', array( 'default' => 'auto' ) );
 	$wp_customize->add_control( 'tn_theme_herorow_bg_size', array(
 		'label'    => __( 'Background Size', 'tn_' ),
 		'section'  => 'tn_theme_herorow_section',
 		'type'     => 'text',
 		'priority' => 90,
 	) );
-
+	$wp_customize->add_setting( 'tn_theme_hero_image', array( 'default' => esc_url( get_bloginfo( 'template_url' ) ).'/images/hero.png' ) );
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'tn_theme_hero_image', array(
+		'label'    => __( 'Hero Image', 'tn_' ),
+		'section'  => 'tn_theme_herorow_section',
+		'priority' => 60,
+	) ) );
+	$wp_customize->add_setting( 'tn_theme_hero_image_cat' );
+	$wp_customize->add_control( 'tn_theme_hero_image_cat', array(
+		'label'    => __( 'Orbit Image Cat', 'tn_' ),
+		'section'  => 'tn_theme_herorow_section',
+		'type'     => 'text',
+		'priority' => 60,
+	) );
 // Pallet Primary
 	$wp_customize->add_section( 'tn_theme_pallet1', array(
 		'title'    => 'Primary Colors',
@@ -407,7 +420,14 @@ function fx_tn_theme_box( $wp_customize ) {
 		'type'     => 'text',
 		'priority' => 20,
 	) );
-
+	$wp_customize->add_setting( 'tn_theme_contact_position', array( 'default' => 'right') );
+	$wp_customize->add_control( 'tn_theme_contact_position', array(
+		'label'    => 'Contact Menu',
+		'section'  => 'tn_theme_contacts_section',
+		'type'     => 'radio',
+		'choices'  => array( 'left' => 'Left', 'right' => 'Right', 'hidden' => 'Hidden', ),
+		'priority' => 10,
+	) );
 
 // Copyright
 	$wp_customize->add_section( 'tn_theme_copyright_section', array(

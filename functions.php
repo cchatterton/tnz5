@@ -11,6 +11,7 @@ require_once('includes/theme_style.php'); // <-- dynamic stylesheets
 require_once('includes/fx_convert_color.php');
 require_once('includes/fx_onclick.php');
 require_once('includes/fx_encrypt.php');
+require_once('includes/fx_orbit.php');
 
 // Custom Functions (fx_...php) <-- developed just for this variation
 
@@ -19,6 +20,7 @@ require_once('includes/fx_encrypt.php');
 // Custom Post Types (cpt_...php)
 
 // Custom Taxonomies (tax_...php)
+require_once('includes/tax_img_cat.php');
 
 // Custom Meta (meta_...php)
 
