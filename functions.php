@@ -2,7 +2,7 @@
 
 // Theme Elements
 require_once('includes/theme_globals.php'); // <-- gloabl variables
-require_once('includes/theme_scripts.php') // <-- enques scripts to header
+require_once('includes/theme_scripts.php'); // <-- enques scripts to header
 require_once('includes/theme_menus.php'); // <-- menus
 require_once('includes/theme_google_fonts.php'); // <-- theme options to reference upto three google fonts
 require_once('includes/theme_customizer.php'); // <-- theme customizer

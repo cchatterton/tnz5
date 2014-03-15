@@ -1,16 +1,8 @@
 		<!-- Start Footer Content /-->
-		<footer>
-			<div class="row">
-			  <div class="small-12 large-12 columns copy">&copy;
-			    <?php tn_e( 'tn_theme_copyright', 'customizer' ); echo ' '.date("Y"); ?>
-			  </div>
-			</div>
-		</footer>
+		<?php fx_theme_row( 'lastrow' , '', 'row_lastrow.php'); ?>
 		<!-- End Footer Content /-->
 
-		</div>
-		<!-- end everything -->
-
+		</div><!-- end everything -->
 		<?php wp_footer(); ?>
 
 		<script>

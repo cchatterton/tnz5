@@ -1,4 +1,49 @@
 <?php
+// row customizers
+function fx_theme_row_customizer( $wp_customize ) {
+
+		$header_rows = array( 'toprow', 'herorow', 'lastrow' );
+		foreach ( $header_rows as $rowname ) {
+
+    // add to row options to customizer
+    $section = 'tn_theme_'.$rowname.'_section';
+    $wp_customize->add_section( 'tn_theme_'.$rowname.'_section' , array(
+      'title'    => $rowname,
+      'priority' => 41,
+    ) );
+    // inputs
+    $wp_customize->add_setting( 'tn_theme_'.$rowname.'_show', array( 'default' => '1') );
+    $wp_customize->add_control( 'tn_theme_'.$rowname.'_show', array(
+      'label'    => __( 'Show '.$rowname, 'tn_'),
+      'section'  => 'tn_theme_'.$rowname.'_section',
+      'type'     => 'radio',
+      'choices'  => array( '0' => 'Hidden', '1' => 'Full width', '2' => 'Within a row', ),
+      'priority' => 10,
+    ) );
+    $wp_customize->add_setting( 'tn_theme_'.$rowname.'_bg_image', array( 'default' => esc_url( get_bloginfo( 'template_url' ) ).'/images/'.$rowname.'_bg.png' ) );
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'tn_theme_'.$rowname.'_bg_image', array(
+      'label'    => __( 'Background Image', 'tn_' ),
+      'section'  => 'tn_theme_'.$rowname.'_section',
+      'priority' => 20,
+    ) ) );
+    $wp_customize->add_setting( 'tn_theme_'.$rowname.'_bg_color', array( 'default' => '#cecece', 'sanitize_callback' => 'sanitize_hex_color', ) );
+    $wp_customize->add_control( new WP_Customize_Color_Control(  $wp_customize, 'tn_theme_'.$rowname.'_bg_color', array(
+      'label'    => __( 'Background Color', 'tn_' ),
+      'section'  => 'tn_theme_toprow_section',
+      'priority' => 30,
+    ) ) );
+    $wp_customize->add_setting( 'tn_theme_'.$rowname.'_bg_css' );
+    $wp_customize->add_control( 'tn_theme_'.$rowname.'_bg_css', array(
+      'label'    => __( 'CSS', 'tn_' ),
+      'description' => 'excludes color and background image',
+      'section'  => 'tn_theme_'.$rowname.'_section',
+      'type'     => 'text',
+      'priority' => 40,
+    ) );
+		}
+}
+
+add_action( 'customize_register', 'fx_theme_row_customizer'  );
 
 // http://themefoundation.com/wordpress-theme-customizer/
 function fx_tn_theme_box( $wp_customize ) {

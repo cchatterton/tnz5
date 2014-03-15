@@ -19,3 +19,16 @@ h1, h2, h3, h4, h5, h6 {margin-top:0px;)}
 	.top-bar-section li a:hover:not(.button) { background: none repeat scroll 0% 0% rgb(79, 109, 172)!important; color: #fff}
 	.top-bar-section .divider { border-bottom: 1px solid rgb(79, 109, 172)!important; border-top: 1px solid rgba(0,0,0,0.1)!important; clear: both; height: 1px; width: 100%; }
  .full-row:not(#row-topbar) {min-height:100px;}
+
+/* topbar style */
+	.top-bar.expanded {display: inline;}
+	.top-bar.expanded .title-area, .top-bar-section ul li:hover > a {background: #111111;}
+	.top-bar.expanded .toggle-topbar a{color:#111111;}
+	.top-bar.expanded .toggle-topbar a span{box-shadow: 0 10px 0 1px #FFFFFF, 0 16px 0 1px #FFFFFF, 0 22px 0 1px #FFFFFF;}
+	.top-bar, .top-bar-section ul {background:none;}
+	#tn-top-bar {height: 80px;overflow: hidden;}
+	#row-topbar { border-top: 1px solid rgba(0,0,0,0.10);	height: 46px;	width: 100%;}
+	#row-topbar .row.collapse.fixed { top: 109px; }
+	#row-topbar, .top-bar, .top-bar-section li a:not(.button) { background: none repeat scroll 0 0 #000000; color: #FFFFFF}
+	.top-bar-section li a:hover:not(.button) { background: none repeat scroll 0% 0% #111111!important; color: #EEEEEE}
+	.top-bar-section .divider { border-bottom: 1px solid #EEEEEE!important; border-top: 1px solid rgba(0,0,0,0.1)!important; clear: both; height: 1px; width: 100%; }
