@@ -2,10 +2,12 @@
 
 // Theme Elements
 require_once('includes/theme_globals.php'); // <-- gloabl variables
+require_once('includes/theme_scripts.php') // <-- enques scripts to header
 require_once('includes/theme_menus.php'); // <-- menus
 require_once('includes/theme_google_fonts.php'); // <-- theme options to reference upto three google fonts
 require_once('includes/theme_customizer.php'); // <-- theme customizer
 require_once('includes/theme_style.php'); // <-- dynamic stylesheets
+require_once('includes/theme_row.php'); // <-- theme customizer rows
 
 // Common Functions (fx_...php) <-- from out functions libary
 require_once('includes/fx_convert_color.php');

@@ -1,18 +1,21 @@
-      <!-- Start Footer Content /-->
-      <footer class="row">
-      </footer>
-      <!-- End Footer Content /-->
+		<!-- Start Footer Content /-->
+		<footer>
+			<div class="row">
+			  <div class="small-12 large-12 columns copy">&copy;
+			    <?php tn_e( 'tn_theme_copyright', 'customizer' ); echo ' '.date("Y"); ?>
+			  </div>
+			</div>
+		</footer>
+		<!-- End Footer Content /-->
 
-    </div>
-    <!-- end everything -->
+		</div>
+		<!-- end everything -->
 
-<?php wp_footer(); ?>
-<script src="<?php tn_e( 'theme_url' ); ?>/js/vendor/jquery.js"></script>
-<script src="<?php tn_e( 'theme_url' ); ?>/js/vendor/fastclick.js"></script>
-<script src="<?php tn_e( 'theme_url' ); ?>/js/foundation.min.js"></script>
-<script>
-	var tnz5 = jQuery.noConflict();
-	tnz5(document).foundation();
-</script>
-  </body>
+		<?php wp_footer(); ?>
+
+		<script>
+		  var zurb = jQuery.noConflict();
+		  zurb(document).foundation();
+		</script>
+	</body>
 </html>

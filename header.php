@@ -3,18 +3,9 @@
 
   <head>
     <title><?php tn_e( 'site_title' ) ?></title>
-
-    <meta charset="<?php bloginfo( 'charset' ); ?>" />
-    <meta name="description" content="TBD">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link rel="icon" href="<?php tn_e( 'tn_theme_image_favicon', 'customizer' ); ?>" type="image/png" />
-    <link rel="stylesheet" href="<?php tn_e( 'theme_url' ); ?>/css/foundation.css" />
-    <link rel="stylesheet" href="<?php tn_e( 'theme_url' ); ?>/css/normalize.css" />
-    <link rel="stylesheet" href="<?php tn_e( 'theme_url' ); ?>/css/theme.css?v=<?php _e( date('c') ); ?>" />
-
-    <script src="<?php tn_e( 'theme_url' ); ?>/js/modernizr.js"></script>
 
 <?php wp_head(); ?>
   </head>

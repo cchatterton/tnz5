@@ -9,7 +9,9 @@ $GLOBALS['site_title'] 											= $GLOBALS['site_name'].' &raquo; '.$GLOBALS['
 $GLOBALS['theme_url']													= get_template_directory_uri();
 $GLOBALS['home_url']														= esc_url( home_url( '/' ) );
 // ..._path
-$GLOBALS['css_path'] 													= 'wp-content/themes/kidsfutsal/css/';
+$x = get_bloginfo( 'template_directory' );
+$x = substr( $x, ( strlen( $x ) - ( ( strrpos( $x, '/' ) ) ) - 1 ) * -1 );
+$GLOBALS['css_path'] 													= "wp-content/themes/$x/css/";
 
 // global variables can be called with either tn_e or tn_r
 // _e for echo & _r for return
