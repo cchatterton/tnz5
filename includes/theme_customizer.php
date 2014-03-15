@@ -40,6 +40,13 @@ function fx_theme_row_customizer( $wp_customize ) {
       'type'     => 'text',
       'priority' => 40,
     ) );
+    $wp_customize->add_setting( 'tn_theme_'.$rowname.'_min_height', array( 'default' => '100px' ) );
+    $wp_customize->add_control( 'tn_theme_'.$rowname.'_min_height', array(
+      'label'    => __( 'Min Height', 'tn_' ),
+      'section'  => 'tn_theme_'.$rowname.'_section',
+      'type'     => 'text',
+      'priority' => 50,
+    ) );
 		}
 }
 
