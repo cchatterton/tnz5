@@ -16,7 +16,7 @@ function fx_theme_row( $rowname, $class='', $path='', $type=0 ){
     if ( ( $rowname != 'topbar' && $path != 'includes/nav-topbar.php' ) || $type == 0 ) fx_theme_row_style( $rowname ) ; // <-- add style block from customizer
     fx_theme_row_start( $rowname, $class, $type ); // <-- open the wrapper
     fx_theme_row_part ( $rowname, $path ); // <-- gets the theme part
-    fx_theme_row_end ( $rowname ) // <-- close the wrapper
+    fx_theme_row_end ( $rowname );  // <-- close the wrapper
 
   }
   return;
@@ -49,7 +49,7 @@ function fx_theme_row_start( $rowname, $class, $type ) {
 function fx_theme_row_part ( $rowname, $path='' ) {
 
     // get the template
-    if ( substr( $path, -3 ) = 'php' ) {
+    if ( substr( $path, -3 ) == 'php' ) {
       include( $path ); // <-- use row_templatename.php & ensure template in the incldues directory
     } else {
       get_template_part( $rowname ); // <-- get the template as a theme part from the root directory
