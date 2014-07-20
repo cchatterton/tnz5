@@ -1,11 +1,4 @@
-/* default.css - ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- */
-
-body, * {font-family: 'Raleway', sans-serif;}
-body {position: static !important;} /* to fix WP admin bar issue on small screens */
-h1, h2, h3, h4, h5, h6 {margin-top:0px;)}/* style.css --- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- */
-
-aside {background: none repeat scroll 0 0 #eee; margin-top: 20px; min-height: 600px; padding-top: 20px; margin-bottom: 20px; }
-footer {background: none repeat scroll 0 0 #222; color: #ddd; min-height: 200px; padding-top: 20px; }/* media.css ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- */
+/* media.css ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- */
 
 /* orientation */
 @media only screen and (orientation: landscape) {
@@ -105,7 +98,3 @@ footer {background: none repeat scroll 0 0 #222; color: #ddd; min-height: 200px;
 } /* min-width 1921px, xlarge screens */
 
 /* ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- */
-
-/* tn_/style.php */
-
-

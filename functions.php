@@ -1,36 +1,54 @@
-<?php
+<?php // last updated: 18/07/2014
 
-// Theme Elements
-require_once('includes/theme_globals.php'); // <-- gloabl variables
-require_once('includes/theme_scripts.php'); // <-- enques scripts to header
-require_once('includes/theme_menus.php'); // <-- menus
-require_once('includes/theme_google_fonts.php'); // <-- theme options to reference upto three google fonts
-require_once('includes/theme_customizer.php'); // <-- theme customizer
-require_once('includes/theme_style.php'); // <-- dynamic stylesheets
-require_once('includes/theme_row.php'); // <-- theme customizer rows
+$includes = array(
 
-// Common Functions (fx_...php) <-- from out functions libary
-require_once('includes/fx_convert_color.php');
-require_once('includes/fx_onclick.php');
-require_once('includes/fx_encrypt.php');
-require_once('includes/fx_orbit.php');
+	// theme elements
+	array( 'file' => 'globals.php',         'dir' => 'tn' ), // <-- our gloabl variables
+	array( 'file' => 'scripts.php',         'dir' => 'tn' ), // <-- enques our scripts to header
+	array( 'file' => 'menus.php',           'dir' => 'tn' ), // <-- registers our menus
+	array( 'file' => 'fonts.php',           'dir' => 'tn' ), // <-- lets us link up to three google fonts
+	array( 'file' => 'functions.php',       'dir' => 'tn' ), // <-- our theme functions
+	array( 'file' => 'albums.php',          'dir' => 'tn' ), // <-- aka tax_albums
+	array( 'file' => 'mobile.php',          'dir' => 'tn' ), // <-- aka meta_mobile_content
+	array( 'file' => 'customizer.php',      'dir' => 'tn' ), // <-- our customizer fields & settings
+	array( 'file' => 'style.php', 					     'dir' => 'tn' ), // <-- our dynamic css
 
-// Custom Functions (fx_...php) <-- developed just for this variation
+	// set-up sections
+	array( 'file' => 'sections.php',        'dir' => 'sections' ),
 
-// Navicagation (nav_...php)
+	// functions -- comment/uncomment as required!
+	array( 'file' => 'hero.php',            'dir' => 'fx' ),
+	array( 'file' => 'slick.php',           'dir' => 'fx' ),
 
-// Custom Post Types (cpt_...php)
+	// custom posts (cpt_)
+	//array( 'file' => 'cpt_.php',          'dir' => 'ia' ),
 
-// Custom Taxonomies (tax_...php)
-require_once('includes/tax_img_cat.php');
+	// custom taxonomies (tax_)
+	//array( 'file' => 'tax_.php',          'dir' => 'ia' ),
 
-// Custom Meta (meta_...php)
+	// custom meta boxes (meta_)
+	// array( 'file' => 'meta_.php',           'dir' => 'ia' ),
 
-// Libaries & their Functons
-include('lib/Ubench.php');
-include('lib/Detector/Detector.php');
-include('includes/fx_ubench.php');
-include('includes/fx_detector.php');
+	// custom shortcodes (sc_)
+	//array( 'file' => 'sc_.php',           'dir' => 'sc' ),
 
+	// something else?
+	//array( 'file' => '?.php',            'dir' => 'includes' ),
+
+	);
+
+foreach ($includes as $args ) tn_include( $args );
+
+function tn_include( $args ) {
+
+	is_array( $args ) ? extract( $args ) : parse_str( $args );
+
+	// check for required variables
+	if( !$dir && !$file ) return;
+
+	// include required theme part
+	$dir == '' ? locate_template( array( $file ), true ) : locate_template( array( $dir. '/' . $file ), true );
+	return;
+}
 
 ?>

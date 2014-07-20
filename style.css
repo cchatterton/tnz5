@@ -1,16 +1,28 @@
 /*
 
-Theme Name: TNZ5
-Theme URI: http://techn.com.au/
-Author: Chris Chatterton
-Author URI: http://techn.com.au/
+Theme Name: TNz5
+Theme URI: http://techn.com.au
+Author: TECHN
+Author URI: http://techn.com.au
 Description: WordPress theme boilerplate based on ZURB Foundation 5
-Version: 1.02
+Version: 2.0 (beta 0.1)
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Release Notes
 =============
+2.0 (beta 0.1)
+* tba
+
+1.031
+* added shortcodes to theme_part.php
+
+1.03
+* removed php libaries
+* extended fx_theme_row with fx_theme_section and fx_theme_part
+* removed toprow and herorow as theme parts
+* added front-page.php and added text to index.php and front-page.php to show that theme has installed correctly.
+
 1.02
 * Added Zurb font icons.
 
