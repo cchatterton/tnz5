@@ -7,17 +7,17 @@ add_post_type_support( 'mycpt', 'page-attributes' );
 
 function tax_mytax() {
 	$labels = array(
-		'name'              => _x( 'Mytax', 'taxonomy general name' ),
-		'singular_name'     => _x( 'Mytax', 'taxonomy singular name' ),
-		'search_items'      => __( 'Search Mytaxs' ),
-		'all_items'         => __( 'All Mytaxs' ),
-		'parent_item'       => __( 'Parent Mytax' ),
-		'parent_item_colon' => __( 'Parent Mytax:' ),
-		'edit_item'         => __( 'Edit Mytax' ),
-		'update_item'       => __( 'Update Mytax' ),
-		'add_new_item'      => __( 'Add New Mytax' ),
-		'new_item_name'     => __( 'New Mytax' ),
-		'menu_name'         => __( 'Mytaxs' ),
+		'name'              => _x( 'Mytax', 'taxonomy general name', 'tn_' ),
+		'singular_name'     => _x( 'Mytax', 'taxonomy singular name', 'tn_' ),
+		'search_items'      => __( 'Search Mytaxs', 'tn_' ),
+		'all_items'         => __( 'All Mytaxs', 'tn_' ),
+		'parent_item'       => __( 'Parent Mytax', 'tn_' ),
+		'parent_item_colon' => __( 'Parent Mytax:', 'tn_' ),
+		'edit_item'         => __( 'Edit Mytax', 'tn_' ),
+		'update_item'       => __( 'Update Mytax', 'tn_' ),
+		'add_new_item'      => __( 'Add New Mytax', 'tn_' ),
+		'new_item_name'     => __( 'New Mytax', 'tn_' ),
+		'menu_name'         => __( 'Mytaxs', 'tn_' ),
 	);
 	$args = array(
 		'labels'                => $labels,
@@ -29,9 +29,9 @@ function tax_mytax() {
 		'show_admin_column'     => true,
 		'update_count_callback' => '_update_generic_term_count',
 		'query_var'             => 'mytax',
-		'rewrite'               => array( 'slug' => 'mytax' ),
+		'rewrite'               => array( 'slug' => 'mytax', 'tn_' ),
 	);
-	register_taxonomy( 'mytax', array( 'mycpt' ), $args );
+	register_taxonomy( 'mytax', array( 'mycpt', 'tn_' ), $args );
 }
 add_action( 'init', 'tax_mytax', 0 );
 

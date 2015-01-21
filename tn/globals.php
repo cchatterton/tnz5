@@ -11,7 +11,7 @@ $GLOBALS['site_title'] 											= $GLOBALS['site_name'].' &raquo; '.$GLOBALS['
 $GLOBALS['theme_url']													= get_template_directory_uri();
 $GLOBALS['home_url']														= esc_url( home_url( '/' ) );
 // ..._path
-$x = get_bloginfo( 'template_directory' );
+$x = get_template_directory_uri();
 $x = substr( $x, ( strlen( $x ) - ( ( strrpos( $x, '/' ) ) ) - 1 ) * -1 );
 $GLOBALS['css_path'] 													= "wp-content/themes/$x/css/";
 

@@ -5,7 +5,7 @@ function tn_section( $args ){
   is_array( $args ) ? extract( $args ) : parse_str( $args );
 
   // check for required variables
-  if ( !$name || !$file ) return;
+  if ( !isset( $name ) || !$file ) return;
 
   tn_section_start( $args ); // <-- open the wrapper
   tn_section_content ( $args ); // <-- gets the theme part
@@ -18,8 +18,9 @@ function tn_section_start( $args ){
 
   is_array( $args ) ? extract( $args ) : parse_str( $args );
 
-  if ( !$inner_class ) $inner_class = 'full'; // other options include 'row'
-  if ( !$type ) $type = 'div'; // other options include 'section', 'footer', etc...
+  if ( !isset( $inner_class ) ) $inner_class = 'full'; // other options include 'row'
+  if ( !isset( $type ) ) $type = 'div'; // other options include 'section', 'footer', etc...
+  if ( !isset( $class ) ) $class = 'no-class'; // other options include 'section', 'footer', etc...
 
   // setup the wrapper
   _e( "\n".'<!-- '.$name.' -->'."\n", ns_ );
@@ -33,7 +34,7 @@ function tn_section_content( $args ){
   is_array( $args ) ? extract( $args ) : parse_str( $args );
 
   // check for required variables
-  if ( !$dir ) $dir = 'sections'; // other options include 'row'
+  if ( !isset( $dir ) ) $dir = 'sections'; // other options include 'row'
   locate_template( array( $dir. '/' . $file ), true );
 
 }
@@ -41,6 +42,7 @@ function tn_section_content( $args ){
 function tn_section_end ( $args ){
 
   is_array( $args ) ? extract( $args ) : parse_str( $args );
+  if ( !isset( $type ) ) $type = 'div'; // other options include 'section', 'footer', etc...
 
   _e( ' </div>'."\n", ns_ );
   _e( '</'.$type.'>'."\n", ns_ );

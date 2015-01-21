@@ -9,28 +9,28 @@ function fx_theme_customizer( $wp_customize ) {
 		) );
 		// inputs
 		// large screen
-		$wp_customize->add_setting( ns_.'logo_large', array( 'default' => esc_url( get_bloginfo( 'template_url' ) ).'/images/logo_large.png' ) );
+		$wp_customize->add_setting( ns_.'logo_large', array( 'default' => esc_url( get_template_directory_uri() ).'/images/logo_large.png' ) );
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, ns_.'logo_large', array(
 			'label'    => ns_.'logo_large',
 			'section'  => ns_.'theme_images_section',
 			'priority' => 10,
 		) ) );
 		// medium screen
-		$wp_customize->add_setting( ns_.'logo_medium', array( 'default' => esc_url( get_bloginfo( 'template_url' ) ).'/images/logo_medium.png' ) );
+		$wp_customize->add_setting( ns_.'logo_medium', array( 'default' => esc_url( get_template_directory_uri() ).'/images/logo_medium.png' ) );
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, ns_.'logo_medium', array(
 			'label'    => ns_.'logo_medium',
 			'section'  => ns_.'theme_images_section',
 			'priority' => 20,
 		) ) );
 		// small screen
-		$wp_customize->add_setting( ns_.'logo_small', array( 'default' => esc_url( get_bloginfo( 'template_url' ) ).'/images/logo_small.png' ) );
+		$wp_customize->add_setting( ns_.'logo_small', array( 'default' => esc_url( get_template_directory_uri() ).'/images/logo_small.png' ) );
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, ns_.'logo_small', array(
 			'label'    => ns_.'logo_small',
 			'section'  => ns_.'theme_images_section',
 			'priority' => 30,
 		) ) );
 		// favicon
-		$wp_customize->add_setting( ns_.'favicon', array( 'default' => esc_url( get_bloginfo( 'template_url' ) ).'/images/favicon.png' ) );
+		$wp_customize->add_setting( ns_.'favicon', array( 'default' => esc_url( get_template_directory_uri() ).'/images/favicon.png' ) );
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, ns_.'favicon', array(
 			'label'   	=> ns_.'favicon',
 			'section'  => ns_.'theme_images_section',

@@ -3,3 +3,11 @@
 body, * {font-family: 'Raleway', sans-serif;}
 body {position: static !important;} /* to fix WP admin bar issue on small screens */
 h1, h2, h3, h4, h5, h6 {margin-top:0px;)}
+.wp-caption {color:#222;}
+.wp-caption-text {color: #222;}
+.sticky {color: #222;}
+.gallery-caption {color: #222;}
+.bypostauthor {color: #222;}
+.alignright {text-align: right;}
+.alignleft {text-align: left;}
+.aligncenter {text-align: center;}

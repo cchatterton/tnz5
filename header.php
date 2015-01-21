@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 	<head>
-		<title><?php tn_e( 'site_title' ) ?></title>
+		<title><?php wp_title('|', true, 'right'); ?></title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <?php

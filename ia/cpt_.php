@@ -5,17 +5,17 @@
 
 function cpt_mycpt() {
 	$labels = array(
-		'name'               => _x( 'Mycpts', 'post type general name' ),
-		'singular_name'      => _x( 'Mycpt', 'post type singular name' ),
-		'add_new'            => _x( 'Add New', 'Mycpt' ),
-		'add_new_item'       => __( 'Add New Mycpt' ),
-		'edit_item'          => __( 'Edit Mycpt' ),
-		'new_item'           => __( 'New Mycpt' ),
-		'all_items'          => __( 'All Mycpts' ),
-		'view_item'          => __( 'View Mycpt' ),
-		'search_items'       => __( 'Search Mycpts' ),
-		'not_found'          => __( 'No Mycpts found' ),
-		'not_found_in_trash' => __( 'No Mycpts found in the Trash' ),
+		'name'               => _x( 'Mycpts', 'post type general name', 'tn_' ),
+		'singular_name'      => _x( 'Mycpt', 'post type singular name', 'tn_' ),
+		'add_new'            => _x( 'Add New', 'Mycpt', 'tn_' ),
+		'add_new_item'       => __( 'Add New Mycpt', 'tn_' ),
+		'edit_item'          => __( 'Edit Mycpt', 'tn_' ),
+		'new_item'           => __( 'New Mycpt', 'tn_' ),
+		'all_items'          => __( 'All Mycpts', 'tn_' ),
+		'view_item'          => __( 'View Mycpt', 'tn_' ),
+		'search_items'       => __( 'Search Mycpts', 'tn_' ),
+		'not_found'          => __( 'No Mycpts found', 'tn_' ),
+		'not_found_in_trash' => __( 'No Mycpts found in the Trash', 'tn_' ),
 		'parent_item_colon'  => '',
 		'menu_name'          => 'Mycpts'
 	);
@@ -70,7 +70,7 @@ function cpt_mycpt_messages( $messages ) {
 	8 => sprintf( __('Mycpt Post submitted. <a target="_blank" href="%s">Preview Mycpt Post</a>', 'your_text_domain'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
 	9 => sprintf( __('Mycpt Post scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview Mycpt Post</a>', 'your_text_domain'),
 	  // translators: Publish box date format, see http://php.net/date
-	  date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink($post_ID) ) ),
+	  date_i18n( __( 'M j, Y @ G:i', 'tn_' ), strtotime( $post->post_date ) ), esc_url( get_permalink($post_ID) ) ),
 	10 => sprintf( __('Mycpt Post draft updated. <a target="_blank" href="%s">Preview Mycpt Post</a>', 'your_text_domain'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
   );
 
