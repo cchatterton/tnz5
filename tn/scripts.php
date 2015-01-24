@@ -1,6 +1,7 @@
 <?php // 20/01/2015
 
 function tn_admin_enqueue_scripts() {
+	wp_enqueue_style( 'admin', get_stylesheet_directory_uri().'/css/admin.css','', date('c'));
 	wp_enqueue_style( 'wp-color-picker' );
 	wp_enqueue_script( 'meta-box-color-js', get_template_directory_uri() . '/js/meta-box-color.js', array( 'wp-color-picker' ) );
 	wp_enqueue_media();
@@ -19,7 +20,8 @@ add_action( 'admin_enqueue_scripts', 'tn_admin_enqueue_scripts' );
 function tn_wp_enqueue_scripts() {
 	// styles
 	wp_enqueue_style( 'normalize', get_stylesheet_directory_uri().'/css/normalize.css');
-	wp_enqueue_style( 'foundation', get_stylesheet_directory_uri().'/css/foundation.css');
+	if (get_option( 'tn_zurb_grid' ) == 12 ) wp_enqueue_style( 'foundation', get_stylesheet_directory_uri().'/css/foundation12.min.css');
+	if (get_option( 'tn_zurb_grid' ) == 24 ) wp_enqueue_style( 'foundation', get_stylesheet_directory_uri().'/css/foundation24.min.css');
 	wp_enqueue_style( 'slick', get_stylesheet_directory_uri().'/css/slick.css');
 	wp_enqueue_style( 'style', get_stylesheet_directory_uri().'/css/theme.css','', date('c'));
 

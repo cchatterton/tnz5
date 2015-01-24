@@ -140,4 +140,59 @@ function tn_title( $title, $sep ) {
 }
 add_filter( 'wp_title', 'tn_title', 10, 2 );
 
+
+add_action( 'admin_bar_menu', 'toolbar_link_to_mypage', 999 );
+
+function toolbar_link_to_mypage( $wp_admin_bar ) {
+
+	$qs = $_SERVER["QUERY_STRING"]; parse_str($qs); parse_str($qs, $atts);
+
+	if ( !$atts['status'] ) {
+		$atts['option'] = get_option( 'tn_site_status' );
+	} else {
+		update_option( 'tn_site_status', strtolower( $atts['status'] ) );
+		$atts['option'] = $atts['status'];
+	}
+
+	$statuses = array('development','staging','production' );
+
+	$i = 1;
+	foreach ($statuses as $status) {
+		// var_dump('atts'.$atts['status']);
+		// var_dump('status'.$status);
+		$class = ( $atts['option'] == $status ) ? $status : '';
+		$atts['status'] = $status;
+
+		$qs = http_build_query( $atts );
+		$args = array(
+			'id'    => $status,
+			'title' => ucfirst( $status ),
+			'href'  => '?'.$qs,
+			'meta'  => array( 'class' => 'site-status '.$class )
+		);
+		$wp_admin_bar->add_node( $args );
+	}
+
+
+	// 12 or 24?
+		if ( !$atts['zurb'] ) {
+			$atts['zurb'] = get_option( 'tn_zurb_grid' );
+		} else {
+			update_option( 'tn_zurb_grid', intval( $atts['zurb'] ) );
+		}
+
+		$title = ( $atts['zurb'] == 12 ) ? 12 : 24;
+		$atts['zurb'] = ( $atts['zurb'] == 12 ) ? 24 : 12;
+
+		$qs = http_build_query( $atts );
+		$args = array(
+			'id'    => 'zurb',
+			'title' => 'Z'.$title,
+			'href'  => '?'.$qs,
+			'meta'  => array( 'class' => 'zurb-grid ' )
+		);
+		$wp_admin_bar->add_node( $args );
+
+}
+
 ?>

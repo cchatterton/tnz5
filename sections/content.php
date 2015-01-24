@@ -14,4 +14,6 @@ echo '<article class="small-12 medium-9 large-9 columns">'."\n";
 echo '</article>'."\n";
 echo '<aside class="small-12 medium-3 large-3 columns">'."\n";
 get_sidebar();
-echo '</aside>'."\n"; ?>
+echo '</aside>'."\n"; 
+
+?>
