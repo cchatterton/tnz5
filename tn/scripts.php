@@ -22,7 +22,7 @@ function tn_wp_enqueue_scripts() {
 	wp_enqueue_style( 'normalize', get_stylesheet_directory_uri().'/css/normalize.css');
 	if (get_option( 'tn_zurb_grid' ) == 12 ) wp_enqueue_style( 'foundation', get_stylesheet_directory_uri().'/css/foundation12.min.css');
 	if (get_option( 'tn_zurb_grid' ) == 24 ) wp_enqueue_style( 'foundation', get_stylesheet_directory_uri().'/css/foundation24.min.css');
-	wp_enqueue_style( 'slick', get_stylesheet_directory_uri().'/css/slick.css');
+	//wp_enqueue_style( 'slick', get_stylesheet_directory_uri().'/css/slick.css');
 	wp_enqueue_style( 'style', get_stylesheet_directory_uri().'/css/theme.css','', date('c'));
 
 	$theme_fonts = get_option( 'theme_fonts' );

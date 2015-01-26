@@ -22,10 +22,10 @@ function tax_mytax() {
 	$args = array(
 		'labels'                => $labels,
 		'hierarchical'          => true, // true = categories & false = tags
-		'public' 		=> true,
-		'show_ui' 		=> true,
-		'show_tagcloud' 	=> true,
-		'show_in_nav_menus' 	=> true,
+		'public' 															=> true,
+		'show_ui' 														=> true,
+		'show_tagcloud' 								=> true,
+		'show_in_nav_menus' 				=> true,
 		'show_admin_column'     => true,
 		'update_count_callback' => '_update_generic_term_count',
 		'query_var'             => 'mytax',

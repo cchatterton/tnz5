@@ -17,9 +17,9 @@ if( $theme_fonts[ns_."zfi3"] == 'true' ) {
 		echo '		<link rel="stylesheet" href="/wp-content/themes/boilerplate/icons/foundation-icons.eot" />'."\n";
 }
 // Font Awesome 4.1.0
-if( $theme_fonts[ns_."fa410"] == 'true' ) {
-		echo '		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />'."\n";
-}
+if( $theme_fonts[ns_."fa410"] == 'true' ) echo '		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />'."\n";
+// Font Awesome 4.2.0
+if( $theme_fonts[ns_."fa420"] == 'true' ) echo '		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">'."\n";
 ?>
 <?php wp_head(); ?>
 	</head>

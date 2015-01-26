@@ -33,24 +33,6 @@ function cpt_mycpt() {
 }
 add_action( 'init', 'cpt_mycpt' );
 
-
-// Styling for the custom post type icon
-
-function cpt_mycpt_header() {
-
-	$menu = site_url().'/wp-content/themes/'.get_template().'/images/mycpt_menu_icon.png';
-	$icon = site_url().'/wp-content/themes/'.get_template().'/images/mycpt_cpt_icon.png';
-
-	echo '<style type="text/css" media="screen">'."\n";
-	echo '	#menu-posts-mycpt post .wp-menu-image { background: url('.$menu.') no-repeat 4px -35px!important; }'."\n";
-	echo '	#menu-posts-mycpt post:hover .wp-menu-image {background: url('.$menu.') no-repeat 4px -2px!important; }'."\n";
-	echo '	#icon-edit.icon32-posts-mycpt post {background: url('.$icon.') no-repeat -1px 2px;}'."\n";
-	echo ' #mycpt post_value {width: 50%;}'."\n";
-	echo '</style>'."\n";
-
-}
-add_action( 'admin_head', 'cpt_mycpt_header' );
-
 // Set Messages
 function cpt_mycpt_messages( $messages ) {
 //http://codex.wordpress.org/Function_Reference/register_post_type

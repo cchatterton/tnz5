@@ -2,9 +2,8 @@
 
 function theme_styles(){
 	// get default style
-	$style = file_get_contents( $GLOBALS['css_path'].'default.css' );
-	$style .= file_get_contents( $GLOBALS['css_path'].'style.css' );
-	$style .= file_get_contents( $GLOBALS['css_path'].'media.css' );
+	$style = file_get_contents( get_template_directory_uri().'/css/default.css' );
+	$style .= file_get_contents( get_template_directory_uri().'/css/style.css' );
 
 	// create dynamic style
 	$style .="

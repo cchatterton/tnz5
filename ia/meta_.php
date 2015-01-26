@@ -10,12 +10,11 @@ function mycpt_metabox() {
 add_action( 'add_meta_boxes', 'mycpt_metabox' );
 
 function mycpt_metabox_content( $post ) {
-	if( !is_array( $mycpt_fields) ) $page_fields = array();
+	if( !is_array( $mycpt_fields) ) $mycpt_fields = array();
 	wp_nonce_field( plugin_basename( __FILE__ ), 'mycpt_metabox_content_nonce' );
 
 	// custom fields here! new line for each field
-	// example #1 array_push( $mycpt_fields, tn_new_meta( 'title=title2&name=name2&size=50%&type=text' ) );
-	// example #2 array_push( $mycpt_fields, tn_new_meta( array( 'title' => 'title3', 'type' => 'text' ) ) );
+	// example array_push( $book_fields, tn_new_field( 'title=target_url&field_name=target_rul&size=100%&type=text&placeholder=http://...' ) );
 
 	set_transient( 'mycpt_fields', serialize( $mycpt_fields ), 3600 );
 }
