@@ -1,5 +1,9 @@
 <?php // last updated: 18/07/2014
 
+define('ns_', 'tn_');
+
+
+
 $includes = array(
 
 	// theme elements
